@@ -1,3 +1,4 @@
+"use strict";
 const obj1 = {
   name: "lee",
   sayName: function () {
