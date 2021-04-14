@@ -1,13 +1,13 @@
-"use strict";
+'use strict';
 const obj1 = {
-  name: "lee",
+  name: 'lee',
   sayName: function () {
     console.log(this.name);
   },
 };
 
 const obj2 = {
-  name: "kim",
+  name: 'kim',
 };
 
 obj2.sayName = obj1.sayName;
