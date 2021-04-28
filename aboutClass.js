@@ -1,13 +1,25 @@
 'use strict';
 
-// 리턴값으로 클래스를 생성하는 방법
-const makeClass = (phrase) => {
-  return class {
-    sayHi() {
-      console.log(phrase);
-    }
-  };
-};
+class User {
+  constructor(name) {
+    this.name = name;
+  }
 
-const User = makeClass('Hello');
-new User().sayHi(); /* Hello */
+  get name() {
+    return this._name;
+  }
+
+  set name(phrase) {
+    if (phrase.length < 4) {
+      console.log('Too short');
+      return;
+    } else {
+      this._name = phrase;
+    }
+  }
+}
+
+const user = new User('wdrk');
+console.log(user.name); /* wdrk */
+
+const user2 = new User(''); /* Too short */
