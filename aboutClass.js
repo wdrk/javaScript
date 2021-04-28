@@ -1,22 +1,11 @@
-class User {
-  // new 연산이 constructor()를 호출한다
-  constructor(name) {
-    this.name = name;
-  }
+'use strict';
 
+// 클래스 표현식으로 클래스를 정의하는 방법
+const User = class {
   sayHi() {
-    console.log(this.name);
+    console.log('hello');
   }
-}
+};
 
-// 클래스는 function 이다
-console.log(typeof User); /* function */
-
-// 정확히는 생성자 메서드와 동일하다
-console.log(User === User.prototype.constructor); /* true */
-
-// 클래스는 내부에서 정의한 메서드를 User.prototype에 저장한다
-console.log(User.prototype.sayHi);
-
-// 프로포타입에 있는 메서드의 이름을 가져오는 방법
-console.log(Object.getOwnPropertyNames(User.prototype));
+// new 연산으로 생성한 객체의 sayHi() 함수를 호출하는 구조
+new User().sayHi();
