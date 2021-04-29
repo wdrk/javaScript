@@ -1,8 +1,8 @@
 'use strict';
 
-const createArray = (arrayCreator, value) => {
-  return arrayCreator(value);
+const translate = (...args) => {
+  return Array.from(args, (value) => value + 1);
 };
 
-let items = createArray(Array.of, 4);
-console.log(items);
+let numbers = translate(1, 2, 3);
+console.log(numbers);
