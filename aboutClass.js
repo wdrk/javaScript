@@ -1,17 +1,17 @@
 'use strict';
 
-let propertyName = 'html';
-
-class CustomHTMLElement {
-  constructor(element) {
-    this._element = element;
+class PersonClass {
+  constructor(name) {
+    this._name = name;
   }
 
-  get [propertyName]() {
-    return this._element.innerHTML;
+  sayName() {
+    console.log(this._name);
   }
 
-  set [propertyName](value) {
-    this._element.innerHTML = value;
+  static create(name) {
+    return new PersonClass(name);
   }
 }
+
+const person = PersonClass.create('Nicholas');
