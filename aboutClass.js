@@ -1,17 +1,23 @@
 'use strict';
 
-class PersonClass {
-  constructor(name) {
-    this._name = name;
+class Rectangle {
+  constructor(width, length) {
+    this._width = width;
+    this._length = length;
   }
 
-  sayName() {
-    console.log(this._name);
-  }
-
-  static create(name) {
-    return new PersonClass(name);
+  getArea() {
+    return this._width * this._length;
   }
 }
 
-const person = PersonClass.create('Nicholas');
+class Square extends Rectangle {
+  constructor(length) {
+    super(length, length);
+  }
+}
+
+const square = new Square(3);
+console.log(square.getArea());
+console.log(square instanceof Square);
+console.log(square instanceof Rectangle);
