@@ -1,15 +1,13 @@
 'use strict';
 
-function createObject(classDef) {
-  return new classDef();
-}
-
-const obj = new createObject(
-  class {
-    sayHi() {
-      console.log('Hi');
-    }
+const person = new (class {
+  constructor(name) {
+    this._name = name;
   }
-);
 
-obj.sayHi();
+  sayName() {
+    console.log(this._name);
+  }
+})('Nicholas');
+
+person.sayName();
