@@ -1,23 +1,16 @@
 'use strict';
 
-class CustomHTMLElement {
-  constructor(element) {
-    this._element = element;
+let methodName = 'sayName';
+
+class PersonClass {
+  constructor(name) {
+    this._name = name;
   }
 
-  get html() {
-    return this._element.innerHTML;
-  }
-
-  set html(value) {
-    this._element.innerHTML = value;
+  [methodName]() {
+    console.log(this._name);
   }
 }
 
-const descriptor = Object.getOwnPropertyDescriptor(
-  CustomHTMLElement.prototype,
-  'html'
-);
-console.log('get' in descriptor);
-console.log('set' in descriptor);
-console.log(descriptor.enumerable);
+const me = new PersonClass('Nicholas');
+me.sayName();
