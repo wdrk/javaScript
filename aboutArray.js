@@ -1,14 +1,8 @@
 'use strict';
 
-let items = Array.of(1, 2);
-console.log(items.length);
-console.log(items[0]);
-console.log(items[1]);
+const createArray = (arrayCreator, value) => {
+  return arrayCreator(value);
+};
 
-items = Array.of(2);
-console.log(items.length);
-console.log(items[0]);
-
-items = Array.of('2');
-console.log(items.length);
-console.log(items[0]);
+let items = createArray(Array.of, 4);
+console.log(items);
