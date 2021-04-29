@@ -1,16 +1,17 @@
 'use strict';
 
-let methodName = 'sayName';
+let propertyName = 'html';
 
-class PersonClass {
-  constructor(name) {
-    this._name = name;
+class CustomHTMLElement {
+  constructor(element) {
+    this._element = element;
   }
 
-  [methodName]() {
-    console.log(this._name);
+  get [propertyName]() {
+    return this._element.innerHTML;
+  }
+
+  set [propertyName](value) {
+    this._element.innerHTML = value;
   }
 }
-
-const me = new PersonClass('Nicholas');
-me.sayName();
