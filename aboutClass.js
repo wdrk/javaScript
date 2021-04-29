@@ -16,10 +16,9 @@ class Square extends Rectangle {
     super(length, length);
   }
 
-  // 함수 재정의 (오버라이드)
+  // 함수 재정의 (오버라이드) 구조지만 내부에서 부모 클래스의 메서드를 호출
   getArea() {
-    console.log('Square.getArea()');
-    return this._length * this._length;
+    return super.getArea();
   }
 }
 
