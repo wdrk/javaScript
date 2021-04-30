@@ -1,9 +1,18 @@
 'use strict';
 
-const numbers = [25, 30, 35, 40, 45];
+// 10바이트의 배열 버퍼를 만들기
+const buffer = new ArrayBuffer(10);
+console.log(buffer.byteLength); /* 10 */
 
-// 콜백 함수가 처음 true를 반환한 값을 반환한다
-console.log(numbers.find((n) => n > 33)); /* 35 */
+// buffer에 접근할 수 있는 view 인스턴스 만들기
+const view = new DataView(buffer);
 
-// 콜백 함수가 처음 true를 반환한 값의 인덱스를 반환한다
-console.log(numbers.findIndex((n) => n > 33)); /* 2 */
+// buffer의 5, 6번째 바이트에만 접근할 수 있는 view 인스턴스 만들기
+const view2 = new DataView(buffer, 5, 2);
+
+console.log(view.buffer === buffer); /* true */
+console.log(view2.buffer === buffer); /* true */
+console.log(view.byteOffset); /* 0 */
+console.log(view2.byteOffset); /* 5 */
+console.log(view.byteLength); /* 10 */
+console.log(view2.byteLength); /* 2 */
