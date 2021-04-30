@@ -1,18 +1,11 @@
 'use strict';
 
-// const promise = new Promise((resolve, reject) => {
-//   try {
-//     throw new Error('Explosion!');
-//   } catch (ex) {
-//     reject(ex);
-//   }
-// });
-
-// 위 예제를 간단히 하는 방법
-const promise = new Promise((resolve, reject) => {
-  throw new Error('Explosion!');
+const p1 = new Promise((resolve, reject) => {
+  resolve(42);
 });
 
-promise.catch((error) => {
-  console.log(error.message); /* Explosion! */
+p1.then((value) => {
+  console.log(value);
+}).then(() => {
+  console.log('Finished');
 });
