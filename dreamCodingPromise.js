@@ -66,6 +66,9 @@ const cook = (egg) =>
 
 getHen()
   .then(getEgg) /* .then((hen) => getEgg(hen)) */
+  .catch((error) => {
+    return 'bread';
+  })
   .then(cook) /* .then((egg) => cook(egg))   */
   .then(console.log) /* .then((meal) => console.log(meal)); */
   .catch(console.log);
