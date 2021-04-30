@@ -1,18 +1,14 @@
 'use strict';
 
-// 10바이트의 배열 버퍼를 만들기
-const buffer = new ArrayBuffer(10);
-console.log(buffer.byteLength); /* 10 */
-
-// buffer에 접근할 수 있는 view 인스턴스 만들기
+// 배열 버퍼와 뷰 선언
+const buffer = new ArrayBuffer(2);
 const view = new DataView(buffer);
 
-// buffer의 5, 6번째 바이트에만 접근할 수 있는 view 인스턴스 만들기
-const view2 = new DataView(buffer, 5, 2);
+// DataView의 setter 함수로 (오프셋, 값) 지정
+view.setInt8(0, 5);
+view.setUint8(1, -1);
 
-console.log(view.buffer === buffer); /* true */
-console.log(view2.buffer === buffer); /* true */
-console.log(view.byteOffset); /* 0 */
-console.log(view2.byteOffset); /* 5 */
-console.log(view.byteLength); /* 10 */
-console.log(view2.byteLength); /* 2 */
+// 원하는 비트 단위와 오프셋을 조합해서 값을 읽어올 수 있다
+console.log(view.getInt8(0)); /* 5 */
+console.log(view.getInt8(1)); /* -1 */
+console.log(view.getInt16(0)); /* 1535 */
