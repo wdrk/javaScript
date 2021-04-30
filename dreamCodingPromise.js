@@ -54,7 +54,7 @@ const getHen = () =>
 const getEgg = (hen) =>
   new Promise((resolve, reject) => {
     setTimeout(() => {
-      resolve(`${hen} => egg`);
+      reject(new Error(`${hen} => egg`));
     }, 1000);
   });
 const cook = (egg) =>
@@ -67,4 +67,5 @@ const cook = (egg) =>
 getHen()
   .then(getEgg) /* .then((hen) => getEgg(hen)) */
   .then(cook) /* .then((egg) => cook(egg))   */
-  .then(console.log); /* .then((meal) => console.log(meal)); */
+  .then(console.log) /* .then((meal) => console.log(meal)); */
+  .catch(console.log);
