@@ -1,4 +1,4 @@
-import { sum, multiply, magicNumber } from './aboutModule.js';
+import * as example from './aboutModule.js';
 
-console.log(sum(1, magicNumber)); /* 8 */
-console.log(multiply(1, 2)); /* 2 */
+console.log(example.sum(1, example.magicNumber)); /* 8 */
+console.log(example.multiply(1, 2)); /* 2 */
