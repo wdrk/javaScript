@@ -1,5 +1,4 @@
-// import는 export 할때 바꾼 이름으로 해야 함
-import { sum as add } from './aboutModule.js';
+// 모듈의 기본값은 중괄호를 안쓴다
+import sum from './aboutModule.js';
 
-// console.log(sum(1, 2)); /* ERROR */
-console.log(add(1, 2)); /* 3 */
+console.log(sum(2, 3)); /* 5 */
