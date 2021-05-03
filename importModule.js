@@ -1,4 +1,5 @@
-// 모듈의 기본값은 중괄호를 안쓴다
-import sum from './aboutModule.js';
+// 모듈의 기본 값과 기본값이 아닌 것을 import 하는 방법
+import sum, { color } from './aboutModule.js';
 
-console.log(sum(2, 3)); /* 5 */
+console.log(color); /* red */
+console.log(sum(4, 1)); /* 5 */
