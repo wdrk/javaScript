@@ -10,6 +10,10 @@ export function sum(num1, num2) {
   return num1 + num2;
 }
 
+export function setName(newName) {
+  name = newName;
+}
+
 // 클래스 익스포트
 export class Rectangle {
   constructor(length, width) {
