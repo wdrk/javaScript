@@ -1,9 +1,11 @@
 let node = {
-  type: 'Identifier',
-  name: 'foo',
-};
+    type: 'Identifier',
+    name: 'foo',
+  },
+  type = 'Literal',
+  name = 5;
 
-let { type, name } = node;
+({ type, name } = node);
 
-console.log(type); /* Identifier */
-console.log(name); /* foo */
+console.log(type);
+console.log(name);
