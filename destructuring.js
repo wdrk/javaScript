@@ -1,20 +1,14 @@
 'use strict';
 
-/* ES6 이전에 값을 교환하던 방법 */
-let a = 1;
-let b = 2;
-let tmp;
+const colors = ['red', 'green', 'blue'];
 
-tmp = a;
-a = b;
-b = tmp;
+let [firstColor, ...restColors] = colors;
 
-/* 구조분해 문법을 이용해서 손쉽게 변수의 값을 교환하는 방법 */
+console.log(firstColor); /* red */
+console.log(restColors.length); /* 2 */
+console.log(restColors[0]); /* green */
+console.log(restColors[1]); /* blue */
 
-let c = 1;
-let d = 2;
-
-[c, d] = [d, c];
-
-console.log(c); /* 2 */
-console.log(d); /* 1 */
+/* 나머지 요소 문법으로 배열을 쉽게 복사하는 방법 */
+const [...cloneColors] = colors;
+console.log(cloneColors); /* ['red','green','blue'] */
