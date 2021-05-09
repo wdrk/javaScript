@@ -3,9 +3,21 @@
 let node = {
   type: 'Identifier',
   name: 'foo',
+  loc: {
+    start: {
+      line: 1,
+      column: 1,
+    },
+    end: {
+      line: 1,
+      column: 4,
+    },
+  },
 };
 
-let { type: localType, name: localName } = node;
+let {
+  loc: { start: localStart },
+} = node;
 
-console.log(localType); /* Identifier */
-console.log(localName); /* foo */
+console.log(localStart.line); /* 1 */
+console.log(localStart.column); /* 1 */
