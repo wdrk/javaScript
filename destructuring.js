@@ -1,23 +1,8 @@
 'use strict';
 
-let node = {
-  type: 'Identifier',
-  name: 'foo',
-  loc: {
-    start: {
-      line: 1,
-      column: 1,
-    },
-    end: {
-      line: 1,
-      column: 4,
-    },
-  },
-};
+const colors = ['red', 'green', 'blue'];
 
-let {
-  loc: { start: localStart },
-} = node;
+const [firstColor, secondColor] = colors;
 
-console.log(localStart.line); /* 1 */
-console.log(localStart.column); /* 1 */
+console.log(firstColor); /* red */
+console.log(secondColor); /* green */
